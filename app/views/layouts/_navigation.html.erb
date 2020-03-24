@@ -1,0 +1,24 @@
+  
+<div class="ui small inverted menu">
+  <div class="ui container">
+    
+    <%= link_to 'Chat box', root_path, class:'active item' %>
+    
+    <a class="item">
+      Messages
+    </a>
+    <div class="right menu">
+      <div class="ui dropdown item">
+        Account <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item">log out</a>
+          <%= link_to 'Log in', login_path, class:'item' %>
+          <a class="item">Sign up</a>
+        </div>
+      </div>
+      <div class="item">
+          <div class="ui primary button">Sign Up</div>
+      </div>
+    </div>
+  </div>
+</div>
