@@ -4,7 +4,7 @@
   Friends
 </h2>
 
-
+<%= render 'layouts/flash' %>
 
 <div class="ui two column grid">
     <div class="ten wide column">
@@ -12,20 +12,7 @@
 			<div class="content"> 
 
 				<div class="ui feed">
-				  <div class="event">
-				    <div class="content">
-				      <div class="summary">
-				         <em>Elliot Fu: </em>Test message
-				      </div>
-				    </div>
-				  </div>
-				  <div class="event">
-				    <div class="content">
-				      <div class="summary">
-				         <a>Stevie Feliciano</a> added <a>Elliot Fu</a> as a friend
-				      </div>
-				    </div>
-				  </div>
+				  	<%= render @messages %>
 				</div>
 			</div>
 			
@@ -77,3 +64,4 @@
     </div>
  
 </div>
+
