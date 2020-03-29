@@ -6,26 +6,57 @@
 
 <%= render 'layouts/flash' %>
 
+
+
+
+
+
+
+<% if @message.errors.any? %>
+  <div class="ui negative message">
+  	 <%= pluralize(@message.errors.count,"error")%> prohibit article from being created
+    <i class="close icon"></i>
+    <div class="header">
+      dsfdfsdfdsfds vvvv
+    </div>  
+  </div>
+	
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="ui two column grid">
     <div class="ten wide column">
 		<div class='ui fluid raised card chatbox'>
 			<div class="content"> 
 
-				<div class="ui feed">
+				<div class="ui feed" id="message-container">
 				  	<%= render @messages %>
 				</div>
 			</div>
 			
 
 			<div class="extra content">
-				<form class="ui reply form">
+				<%= form_for @message, html: {class: "ui reply form"}, url: messages_path, remote: true do |f| %>
 				  <div class="field">
 					<div class="ui fluid icon input">
-						<input type='text' placeholder="Enter a message">
-						<i class="bordered inverted orange edit icon"></i>
+						<%= f.text_field :body, type:"text", placeholder:'Enter a message' %>
+            			<%= button_tag( :class => "ui orange small submit button") do %> &nbsp;
+              			<i class="bordered inverted orange edit icon"></i> 
+            			<% end %>
+            								
 					</div>
 				  </div>
-				</form>
+				<% end %>
 			</div>
 
 
@@ -64,7 +95,3 @@
     </div>
  
 </div>
-
-<% form_for @message do |f| %>
-
-<% end  %>
