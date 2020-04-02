@@ -2,7 +2,7 @@
 	Welcome in message me app
   <i class="inverted orange circular power off icon log-in"></i>
 
-  Log in
+  Sign up
 </h2>
 
 
@@ -14,9 +14,9 @@
 
 <div class="ui placeholder segment">
   <div class="ui two column very relaxed stackable grid">
-    <div class="column">
+    <div class="column signup">
       <div class="ui form">
-        <%= form_for :session do |f| %>
+        <%= form_for @user, url: signup_path do |f| %>
 
           <div class="field">
             <%= f.label "username" %>
@@ -38,12 +38,7 @@
         <% end %>
       </div>
     </div>
-    <div class="middle aligned column">
-      <%= show_link "Sign up", signup_path %>
-    </div>
+    
   </div>
-  <div class="ui vertical divider">
-    Or
-  </div>
+  
 </div>
-
